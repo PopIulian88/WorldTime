@@ -10,11 +10,10 @@ class WorldTime {
   String url = 'Europe/London';
   bool isDayTime = true;
 
-  WorldTime(String location, String flag, String url) {
+  WorldTime({required String location, required String flag, required String url}) {
     this.location = location;
     this.flag = flag;
     this.url = url;
-
   }
 
   Future<void> getTime() async {
