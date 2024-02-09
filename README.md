@@ -1,16 +1,13 @@
-# world_time_app
+# World Time
 
-A new Flutter project.
+This is an app that help you see the hours from other countries. I created this project to help me consolidate my new Flutter skills.
 
-## Getting Started
+## About this application
 
-This project is a starting point for a Flutter application.
+In this app you can see the hours from the country that you selected. All data is obtained from the World Time API.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div style="flex-direction:row;">
+  <img src="readMe_Photos/london_day.png" height="450" width="215">
+  <img src="readMe_Photos/choose_location.png" height="450" width="215">
+  <img src="readMe_Photos/newYork_night.png" height="450" width="215">
+</div>
