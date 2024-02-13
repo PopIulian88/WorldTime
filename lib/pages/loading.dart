@@ -5,6 +5,7 @@ import 'package:world_time_app/services/world_time.dart';
 class Loading extends StatefulWidget {
   const Loading({super.key});
 
+
   @override
   State<Loading> createState() => _LoadingState();
 }
@@ -12,7 +13,8 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
 
   void setupWorldTime() async{
-    WorldTime instance = WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
+    WorldTime instance = WorldTime(url: 'Africa/Cairo', location: 'Cairo', flag: 'egypt.png');
+
     await instance.getTime();
 
     Navigator.pushReplacementNamed(context, "/home", arguments: {
@@ -32,7 +34,7 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.blue,
       body: Center(
         child: SpinKitRotatingCircle(

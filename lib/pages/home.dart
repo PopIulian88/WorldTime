@@ -9,12 +9,22 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  Map data = {"location": "Berlin"};
+  Map data = {"location": "Berlin", "flag": "uk.png", "url": "Europe/London",
+              "isDayTime": true, "time": "18:00"};
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    setState(() {
+      Map? aux = ModalRoute.of(context)?.settings.arguments as Map?;
+      data = aux ?? data;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
 
-    data = data.isNotEmpty ? data : ModalRoute.of(context)?.settings.arguments as Map;
     print(data);
 
     String bgImage = data['isDayTime'] ? 'day.png' : 'night.png';
@@ -25,7 +35,7 @@ class _HomeState extends State<Home> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/${bgImage}'),
+              image: AssetImage('assets/$bgImage'),
               fit: BoxFit.cover
           ),
         ),
@@ -63,13 +73,13 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                          data['location'],
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 28.0,
                           letterSpacing: 2.0,
@@ -77,10 +87,10 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   Text(
-                    data['time'],
-                    style: TextStyle(
+                    data['time'] ?? "12",
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 66.0
                     ),
